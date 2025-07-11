@@ -1,22 +1,26 @@
 # Sentiment-Analysis
 
-Sentiment Analysis on Amazon Reviews
+## Sentiment Analysis on Amazon Reviews
 This project compares two sentiment analysis approaches on the Amazon Fine Food Reviews dataset:
 
-VADER – a rule-based model using lexical heuristics
+- VADER – rule-based sentiment scoring using lexical heuristics
 
-RoBERTa – a transformer-based model (cardiffnlp/twitter-roberta-base-sentiment)
+- RoBERTa – transformer-based model: cardiffnlp/twitter-roberta-base-sentiment
 
-We applied both models to 1000 reviews and visualized their sentiment scores (neg, neu, pos) against actual star ratings.
+- Both models were applied to 1,000 reviews, and their sentiment scores were compared to actual user ratings (1–5 stars).
 
-🔍 Key Observations
-VADER scores correlate linearly with ratings but struggle with nuance.
+## Key Observations
+- VADER scores (neg, neu, pos, compound) track well with extreme ratings but misclassify subtle/mixed sentiment.
 
-RoBERTa provides sharper, context-aware sentiment predictions.
+- RoBERTa produces more confident, context-aware predictions with sharper separation between sentiments.
 
-Differences are most visible in mid-range ratings (2–4 stars).
+- Biggest model disagreements occur on mid-range reviews (2–4 stars), highlighting their different approaches.
 
-📈 Output
-A pairplot shows how each model's sentiment outputs vary across review scores.
+## Output Visualization
+- A seaborn.pairplot was used to visualize sentiment score distributions for both models across star ratings.
 
-This work was inspired by Robert Mulla’s sentiment analysis tutorial.
+- Shows strong correlation for both models at extreme scores, but RoBERTa outperforms in nuanced cases.
+
+## Acknowledgment
+This project was inspired by [Robert Mulla’s Sentiment Analysis tutorial](https://www.youtube.com/watch?v=QpzMWQvxXWk) on YouTube.
+
